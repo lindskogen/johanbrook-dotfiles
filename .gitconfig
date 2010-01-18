@@ -1,0 +1,5 @@
+[user]
+	name = Seivan Heidari
+	email = seivan@kth.se
+[core]
+	excludefiles = /Users/seivan/.gitignore

@@ -1,7 +1,7 @@
 Shamefully duped the installer and completion from THE man, Ryan Bates. Thank you!
 http://github.com/ryanb/dotfiles
 
-For now it's in the dotfiles_installer branch
+For now it's in the dotfiles_installer branch.. 
 git clone git://github.com/seivan/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 rake install

@@ -1,0 +1,13 @@
+# misc
+alias reload='. ~/.bash_profile'
+
+#Warez
+alias tMovies="scp ~/Downloads/*.torrent debby.zapto.org:~/Downloads/Movies/ && rm -rf ~/Downloads/*.torrent"
+alias tProgram="scp ~/Downloads/*.torrent debby.zapto.org:~/Downloads/Program/ && rm -rf ~/Downloads/*.torrent"
+alias tRandom="scp ~/Downloads/*.torrent debby.zapto.org:~/Downloads/Random/ && rm -rf ~/Downloads/*.torrent"
+
+#Django
+alias pym="python manage.py"
+
+#ssh
+alias sc="ssh debby.zapto.org"

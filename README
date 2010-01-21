@@ -4,5 +4,4 @@ http://github.com/ryanb/dotfiles
 For now it's in the dotfiles_installer branch.. 
 git clone git://github.com/seivan/dotfiles ~/.dotfiles
 cd ~/.dotfiles
-git checkout dotfiles_installer
 rake install

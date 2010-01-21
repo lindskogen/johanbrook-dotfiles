@@ -1,11 +1,5 @@
-require "autotest/growl"
-require 'redgreen/autotest'
 require "autotest/restart"
 require "autotest/fsevent"
-require 'autotest/timestamp'
-
-Autotest::Growl::show_modified_files = true
-Autotest::Growl::hide_label = true
  
 module Autotest::Growl
  

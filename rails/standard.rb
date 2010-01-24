@@ -70,7 +70,7 @@ config/database.yml
 CODE
 run "touch tmp/.gitignore log/.gitignore vendor/.gitignore"
 run %{find . -type d -empty | grep -v "vendor" | grep -v ".git" | grep -v "tmp" | xargs -I xxx touch xxx/.gitignore}
-commit_state("Removed public junk, *css files, using shoulda with T::U and Cucumber. Also created .gitignore file for logs, tmp, database stuff. Generated database.yml config, uses sqlite3 for dev, test and cucumber. MySQl with prod")
+commit_state("Removed public junk, *css files, using shoulda with T::U. Also created .gitignore file for logs, tmp, database stuff. Generated database.yml config, uses sqlite3 for dev, test and cucumber. MySQl with prod")
 
 gem "nifty-generators", :lib => false, :source => 'http://gemcutter.org'
 gem "authlogic", :source => 'http://gemcutter.org'
@@ -85,17 +85,17 @@ gem "validation_reflection", :source => 'http://gemcutter.org'
 gem "formtastic", :source => 'http://gemcutter.org'
 gem "will_paginate", :source => 'http://gemcutter.org'
 gem "acts-as-taggable-on", :source => 'http://gemcutter.org'
-#gem "vestal_versions", :source => 'http://gemcutter.org'
-#gem "gravtastic", :source => 'http://gemcutter.org'
+gem "vestal_versions", :source => 'http://gemcutter.org'
+gem "gravtastic", :source => 'http://gemcutter.org'
 gem "inherited_resources", :source => 'http://gemcutter.org' 
 gem "compass", :lib => false, :version =>"0.10.0.pre5", :source => 'http://gemcutter.org'
 gem "fancy-buttons", :lib => false
 rake "gems:install", :sudo => sudo_asked
 commit_state("Installed gems, check template for a list")
 %w(test).each do |environment|
-  gem 'cucumber', :lib => false, :source => 'http://gemcutter.org', :env => environment
-  gem 'cucumber-rails', :lib => false, :source => 'http://gemcutter.org', :env => environment
-  gem 'webrat', :lib => false, :source => 'http://gemcutter.org', :env => environment
+  #gem 'cucumber', :lib => false, :source => 'http://gemcutter.org', :env => environment
+  #gem 'cucumber-rails', :lib => false, :source => 'http://gemcutter.org', :env => environment
+  gem 'webrat', :source => 'http://gemcutter.org', :env => environment
   gem 'factory_girl', :source => 'http://gemcutter.org', :env => environment
   gem 'mocha', :source => 'http://gemcutter.org', :env => environment
   gem 'shoulda', :source => 'http://gemcutter.org', :env => environment
@@ -105,6 +105,7 @@ commit_state("Installed gems, check template for a list")
   rake 'gems:install', :sudo => sudo_asked, :env => environment
   commit_state("Testing gems installed for #{environment}")
 end
+run "echo 'Webrat.configure do |config| config.mode = :rails end' >> test/test_helper.rb"
 # 
 # if yes?("Do you want twitter gem?")
 #     gem "intridea-tweetstream"
@@ -267,41 +268,41 @@ commit_state("Added application layout and moved formtastic sass to the app/styl
 
 
 
-generate "cucumber", "--webrat"
-file "config/environments/cucumber.rb", <<-CODE
+#generate "cucumber", "--webrat"
+#file "config/environments/cucumber.rb", <<-CODE
 # Edit at your own peril - it's recommended to regenerate this file
 # in the future when you upgrade to a newer version of Cucumber.
 # IMPORTANT: Setting config.cache_classes to false is known to
 # break Cucumber's use_transactional_fixtures method.
 # For more information see https://rspec.lighthouseapp.com/projects/16211/tickets/165
-config.cache_classes = true
+#config.cache_classes = true
 # Log error messages when you accidentally call methods on nil.
-config.whiny_nils = true
+#config.whiny_nils = true
 # Show full error reports and disable caching
-config.action_controller.consider_all_requests_local = true
-config.action_controller.perform_caching             = false
+#config.action_controller.consider_all_requests_local = true
+#config.action_controller.perform_caching             = false
 # Disable request forgery protection in test environment
-config.action_controller.allow_forgery_protection    = false
+#config.action_controller.allow_forgery_protection    = false
 # Tell Action Mailer not to deliver emails to the real world.
 # The :test delivery method accumulates sent emails in the
 # ActionMailer::Base.deliveries array.
-config.action_mailer.delivery_method = :test
-config.gem 'cucumber', :lib => false, :source => 'http://gemcutter.org'
-config.gem 'database_cleaner', :lib => false
-config.gem 'cucumber-rails', :lib => false, :source => 'http://gemcutter.org'
-config.gem 'webrat', :lib => false, :source => 'http://gemcutter.org'
-config.gem 'shoulda', :source => 'http://gemcutter.org'
-config.gem 'factory_girl', :source => 'http://gemcutter.org'
-config.gem 'email_spec', :source => 'http://gemcutter.org'
-config.gem 'faker', :source => 'http://gemcutter.org'
-config.gem 'mocha', :source => 'http://gemcutter.org'
-config.gem 'populator', :source => 'http://gemcutter.org'
-CODE
-rake 'gems:install', :sudo => sudo_asked, :env => "cucumber"
+# config.action_mailer.delivery_method = :test
+# config.gem 'cucumber', :lib => false, :source => 'http://gemcutter.org'
+# config.gem 'database_cleaner', :lib => false
+# config.gem 'cucumber-rails', :lib => false, :source => 'http://gemcutter.org'
+# config.gem 'webrat', :lib => false, :source => 'http://gemcutter.org'
+# config.gem 'shoulda', :source => 'http://gemcutter.org'
+# config.gem 'factory_girl', :source => 'http://gemcutter.org'
+# config.gem 'email_spec', :source => 'http://gemcutter.org'
+# config.gem 'faker', :source => 'http://gemcutter.org'
+# config.gem 'mocha', :source => 'http://gemcutter.org'
+# config.gem 'populator', :source => 'http://gemcutter.org'
+# CODE
+# rake 'gems:install', :sudo => sudo_asked, :env => "cucumber"
+# 
+# commit_state("Testing gems installed for cucumber")
+# commit_state("generated cucumber")
 run "mkdir test/factories"
-commit_state("Testing gems installed for cucumber")
-commit_state("generated cucumber")
-
 environment "config.middleware.use 'Rack::Honeypot', HONEYPOT_FIELD_NAME"
 environment "HONEYPOT_FIELD_NAME = '#{app_name}'"
 
@@ -346,7 +347,6 @@ class User < ActiveRecord::Base
   is_gravtastic :email, :secure => true,
                         :filetype => :png,
                         :size => 120
-  has_many :posts
 
   ROLES = %w[admin moderator user guest]
   def role_symbols
@@ -394,7 +394,7 @@ class UsersController < ApplicationController
     # @user = User.new(params[:user])
     # if @user.save
     #   UserSession.create(@user,true)
-    #   redirect_to posts_path
+    #   redirect_to signup_path
     # else
     #   render 'new'
     # end
@@ -413,7 +413,7 @@ class UsersController < ApplicationController
       elsif (@user.role? "guest")
           flash[:notice] = "You are a guest"
       end
-      redirect_to posts_path
+      redirect_to signup_path
     else
       render 'edit'
     end
@@ -427,9 +427,9 @@ generate :session, "user_session"
 generate :nifty_scaffold, "user_session", "username:string", "password:string", "new", "destroy", "--skip-model", "--haml",
 commit_state("generated user_session with a user_session controller combined with haml. Need to edit user_session controller to be restful.")
 inside ('test') { 
-  run "rm -rf fixtures functional integration"
+  run "rm -rf fixtures"
 }
-commit_state("Removed fixtures, functional, integration for factories, shoulda and cucumber")
+commit_state("Removed fixtures, factories and mocks")
 
 file "app/controllers/application_controller.rb", <<-CODE
 class ApplicationController < ActionController::Base
@@ -442,7 +442,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do |exception|
     flash[:error] = "Access denied."
-    redirect_to posts_path
+    redirect_to signup_path
   end
   
   private
@@ -502,7 +502,7 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       flash[:notice] = "Successfully logged in."
-      redirect_to posts_path
+      redirect_to signup_path
     else
       render :action => 'new'
     end
@@ -511,7 +511,7 @@ class UserSessionsController < ApplicationController
   def destroy
     current_user_session.destroy
     flash[:notice] = "Successfully logged out."
-    redirect_to posts_path
+    redirect_to signup_path
   end
   
 end
@@ -573,9 +573,6 @@ route "map.logout  '/logout', :controller => :UserSessions,  :action => :destroy
 route "map.signup  '/signup', :controller => :Users,    :action => :new"
 commit_state("added /login, /logout, /signup routes with Users and UserSessions controllers")
 
-
-rake "db:migrate"
-commit_state("Database migration for User model and its updates - MIGRATION")
 
 # jQuery
 # jquery_filename = "jquery-1.3.2.min.js"
@@ -656,7 +653,13 @@ class BanHammer
   end
 end
 CODE
-commit_state("Added a H")
+commit_state("Added lib/banhammer as rack")
+
+rake "db:migrate"
+#rake "db:test:load"
+rake "db:test:clone"
+commit_state("Database migration for User model and its updates - MIGRATION")
+
 puts <<-CODE
 ************************************************"
 App generation is all done now

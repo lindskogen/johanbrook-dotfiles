@@ -11,6 +11,3 @@ alias pym="python manage.py"
 
 #ssh
 alias sc="ssh debby.zapto.org"
-
-#Rails
-alias TESTME="AUTOFEATURE=true autospec"

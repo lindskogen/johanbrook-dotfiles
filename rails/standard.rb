@@ -236,7 +236,7 @@ file "app/views/layouts/application.html.haml", <<-CODE
       = h(yield(:title) || "Untitled")
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
     = stylesheet_link_tag 'application'
-    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js", "application", :cache => true
+    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js", "application", :cache => true
     = yield(:head)
   
   %body

@@ -10,4 +10,4 @@ alias tRandom="scp ~/Downloads/*.torrent debby.zapto.org:~/Downloads/Random/ && 
 alias pym="python manage.py"
 
 #ssh
-alias sc="ssh debby.zapto.org"
+alias sc="ssh seivan@debby.zapto.org"

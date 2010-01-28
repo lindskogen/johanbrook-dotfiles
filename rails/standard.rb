@@ -20,9 +20,7 @@ end
 app_name = File.basename(File.expand_path(root))
 git :init
 
-sudo_asked = ask("Do you want to install gems with Sudo?")
-sudo_asked = true if sudo_asked == "yes" or sudo_asked == "y" or sudo_asked == ""
-sudo_asked = false if sudo_asked == "n" or sudo_asked == "no"
+
 run "echo 'TODO add readme content' > README"
 run "echo 'TODO add readme content' > doc/README_FOR_APP"
 run "rm -rf config/database.yml"
@@ -90,7 +88,7 @@ gem "gravtastic", :source => 'http://gemcutter.org'
 #gem "inherited_resources", :source => 'http://gemcutter.org' 
 gem "compass", :lib => false, :version =>"0.10.0.pre5", :source => 'http://gemcutter.org'
 gem "fancy-buttons", :lib => false
-rake "gems:install", :sudo => sudo_asked
+rake "gems:install"
 commit_state("Installed gems, check template for a list")
 %w(test).each do |environment|
   #gem 'cucumber', :lib => false, :source => 'http://gemcutter.org', :env => environment
@@ -102,7 +100,7 @@ commit_state("Installed gems, check template for a list")
   gem 'email_spec', :source => 'http://gemcutter.org', :env => environment
   gem 'faker', :source => 'http://gemcutter.org', :env => environment
   gem 'populator', :source => 'http://gemcutter.org', :env => environment
-  rake 'gems:install', :sudo => sudo_asked, :env => environment
+  rake 'gems:install', :env => environment
   commit_state("Testing gems installed for #{environment}")
 end
 run "echo 'Webrat.configure do |config| config.mode = :rails end' >> test/test_helper.rb"

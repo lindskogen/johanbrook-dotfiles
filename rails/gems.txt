@@ -1,0 +1,4 @@
+mysql sqlite3-ruby rmagick nokogiri oniguruma paperclip ultraviolet aasm acts-as-taggable-on annotate authlogic autotest autotest-fsevent autotest-growl autotest-rails bundler cancan capistrano chronic curb daemons database_cleaner email_spec factory_girl faker feedzirra formtastic gemcutter git gosu gravtastic haml heroku hirb inherited_resources intridea-tweetstream jeweler machinist mechanize mocha nifty-generators populator prawn prowl RedCloth redgreen rest-client ruby-debug searchlogic shoulda super_exception_notifier syntax slim_scrooge validation_reflection vestal_versions webrat will_paginate wirble
+
+compass --pre 
+fancy-buttons

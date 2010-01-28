@@ -47,7 +47,7 @@ cd ..
 curl -O http://image_magick.veidrodis.com/image_magick/delegates/libwmf-0.2.8.4.tar.gz
 tar xzvf libwmf-0.2.8.4.tar.gz
 cd libwmf-0.2.8.4
-./configure
+./configure --prefix=/usr/local
 make
 sudo make install
 cd ..
@@ -55,7 +55,7 @@ cd ..
 curl -O http://image_magick.veidrodis.com/image_magick/delegates/lcms-1.19.tar.gz
 tar xzvf lcms-1.19.tar.gz
 cd lcms-1.19
-./configure
+./configure --prefix=/usr/local
 make
 sudo make install
 cd ..

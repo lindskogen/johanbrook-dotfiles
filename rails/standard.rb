@@ -85,9 +85,9 @@ gem "haml", :source => 'http://gemcutter.org'
 gem "formtastic", :source => 'http://gemcutter.org'
 gem "will_paginate", :source => 'http://gemcutter.org'
 gem "acts-as-taggable-on", :source => 'http://gemcutter.org'
-gem "vestal_versions", :source => 'http://gemcutter.org'
+#gem "vestal_versions", :source => 'http://gemcutter.org'
 gem "gravtastic", :source => 'http://gemcutter.org'
-gem "inherited_resources", :source => 'http://gemcutter.org' 
+#gem "inherited_resources", :source => 'http://gemcutter.org' 
 gem "compass", :lib => false, :version =>"0.10.0.pre5", :source => 'http://gemcutter.org'
 gem "fancy-buttons", :lib => false
 rake "gems:install", :sudo => sudo_asked
@@ -139,7 +139,7 @@ run "echo 'Webrat.configure do |config| config.mode = :rails end' >> test/test_h
 #   gem "capistrano"
 # end
 
-generate :vestal_versions_migration
+#generate :vestal_versions_migration
 generate :nifty_scaffold, "Image", "imaginable_id:integer", "imaginable_type:string", "--haml", "--skip-controller"
 run "rm -rf /app/views/images"
 file "app/models/image.rb", <<-CODE
@@ -368,7 +368,6 @@ commit_state("User model now has ROLES, defaults are admin, moderator, user and 
 file "app/controllers/users_controller.rb", <<-CODE
 class UsersController < ApplicationController
     before_filter :current_user, :only => [:show, :edit]
-    #before_filter :update_user_on_create, :only => [:create]
     load_and_authorize_resource
     
   def show  

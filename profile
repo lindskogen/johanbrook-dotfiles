@@ -1,16 +1,16 @@
-source ~/.bash/aliases
-source ~/.bash/paths
-source ~/.bash/config
-source ~/.bash/completions
+source $HOME/.bash/aliases
+source $HOME/.bash/paths
+source $HOME/.bash/config
+source $HOME/.bash/completions
 
-if [ -f ~/.bashrc ]; then
-  . ~/.bashrc
+if [ -f $HOME/.bashrc ]; then
+  . $HOME/.bashrc
 fi
  
-if [ -f ~/.localrc ]; then
-  . ~/.localrc
+if [ -f $HOME/.localrc ]; then
+  . $HOME/.localrc
 fi
 
-if [ -f ~/.bash_profile ]; then
-  . ~/.bash_profile
+if [ -f $HOME/.bash_profile ]; then
+  . $HOME/.bash_profile
 fi

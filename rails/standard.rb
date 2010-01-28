@@ -26,24 +26,25 @@ run "echo 'TODO add readme content' > doc/README_FOR_APP"
 run "rm -rf config/database.yml"
 file "config/database.yml", %Q{
 defaults: &defaults
-  adapter: mysql
+  adapter: postgresql
   encoding: utf8
-  host: localhost
-  username: root
-  password:
-
-development: &development
-  adapter: sqlite3
-  database: db/development.sqlite3
+  host: 
+  #port: 4000
   pool: 5
-  timeout: 5000
-
+  username: 
+  password: 
+  
+development: &development
+  <<: *defaults
+  database: #{app_name}_dev
+  
 test: &TEST
   <<: *development
-  database: db/test.sqlite3
+  database: #{app_name}_test
   
 cucumber:
   <<: *TEST
+  database: #{app_name}_testcuke
    
 production:
   <<: *defaults

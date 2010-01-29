@@ -238,13 +238,17 @@ file "app/views/layouts/application.html.haml", <<-CODE
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
     = stylesheet_link_tag 'application'
     = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js", "application", :cache => true
+    /[if IE]
+      = stylesheet_link_tag 'ie'
+      %a{ :href => 'http://www.mozilla.com/en-US/firefox/' }
+        %h1 Get Firefox
     = yield(:head)
   
   %body
     #container
-      - flash.each do |name, message|
-        %div{:id => "flash_\#{name}"}
-          msg
+      #messages
+        - flash.each do |name, message|
+          %div{:id => "flash_#{name}"}=msg
       
       - if show_title?
         %h1=h yield(:title)

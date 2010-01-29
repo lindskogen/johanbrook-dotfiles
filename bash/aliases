@@ -2,9 +2,9 @@
 alias reload='. $HOME/.bash_profile'
 
 #Warez
-alias tMovies="scp $HOME/Downloads/*.torrent debby.zapto.org:$HOME/Downloads/Movies/ && rm -rf $HOME/Downloads/*.torrent"
-alias tProgram="scp $HOME/Downloads/*.torrent debby.zapto.org:$HOME/Downloads/Program/ && rm -rf $HOME/Downloads/*.torrent"
-alias tRandom="scp $HOME/Downloads/*.torrent debby.zapto.org:$HOME/Downloads/Random/ && rm -rf $HOME/Downloads/*.torrent"
+alias tMovies="scp $HOME/Downloads/*.torrent debby.zapto.org:~/Downloads/Movies/ && rm -rf $HOME/Downloads/*.torrent"
+alias tProgram="scp $HOME/Downloads/*.torrent debby.zapto.org:~/Downloads/Program/ && rm -rf $HOME/Downloads/*.torrent"
+alias tRandom="scp $HOME/Downloads/*.torrent debby.zapto.org:~/Downloads/Random/ && rm -rf $HOME/Downloads/*.torrent"
 
 #Django
 alias pym="python manage.py"

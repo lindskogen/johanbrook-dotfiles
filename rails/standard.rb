@@ -69,7 +69,7 @@ config/database.yml
 CODE
 run "touch tmp/.gitignore log/.gitignore vendor/.gitignore"
 run %{find . -type d -empty | grep -v "vendor" | grep -v ".git" | grep -v "tmp" | xargs -I xxx touch xxx/.gitignore}
-commit_state("Removed public junk, *css files, using shoulda with T::U. Also created .gitignore file for logs, tmp, database stuff. Generated database.yml config, uses sqlite3 for dev, test and cucumber. MySQl with prod")
+commit_state("Removed public junk, *css files. Also created .gitignore file for logs, tmp, database stuff. Generated database.yml config, uses sqlite3 for dev, test and cucumber. MySQl with prod")
 
 gem "nifty-generators", :lib => false, :source => 'http://gemcutter.org'
 gem "authlogic", :source => 'http://gemcutter.org'
@@ -97,7 +97,7 @@ commit_state("Installed gems, check template for a list")
   gem 'webrat', :source => 'http://gemcutter.org', :env => environment
   gem 'factory_girl', :source => 'http://gemcutter.org', :env => environment
   gem 'mocha', :source => 'http://gemcutter.org', :env => environment
-  gem 'shoulda', :source => 'http://gemcutter.org', :env => environment
+  #gem 'shoulda', :source => 'http://gemcutter.org', :env => environment
   gem 'email_spec', :source => 'http://gemcutter.org', :env => environment
   gem 'faker', :source => 'http://gemcutter.org', :env => environment
   gem 'populator', :source => 'http://gemcutter.org', :env => environment

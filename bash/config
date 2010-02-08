@@ -29,3 +29,4 @@ PS2='> '
 PS4='+ '
 }
 proml
+PS1="\$(~/.rvm/bin/rvm-prompt) $PS1"

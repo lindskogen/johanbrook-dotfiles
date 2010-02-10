@@ -1,5 +1,6 @@
 # misc
 alias reload='. $HOME/.profile'
+alias mongo_run='mongod run --config /Users/seivan/.applications/homebrew/Cellar/mongodb/1.2.2-x86_64/mongod.conf'
 
 #Warez
 alias tMovies="scp $HOME/Downloads/*.torrent debby.zapto.org:~/Downloads/Movies/ && rm -rf $HOME/Downloads/*.torrent"

@@ -1,5 +1,5 @@
 # misc
-alias reload='. $HOME/.bash_profile'
+alias reload='. $HOME/.profile'
 
 #Warez
 alias tMovies="scp $HOME/Downloads/*.torrent debby.zapto.org:~/Downloads/Movies/ && rm -rf $HOME/Downloads/*.torrent"

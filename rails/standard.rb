@@ -220,7 +220,7 @@ commit_state("Added haml initializer")
 run "compass --rails -f blueprint . --sass-dir app/stylesheets --css-dir public/stylesheets --images-dir public/images --javascripts-dir public/javascripts --output-style compressed --relative-assets"
 run "echo 'cache_dir = %Q[tmp/sass-cache]\nrequire %Q[compass-colors]\nrequire %Q[fancy-buttons]' >> config/compass.rb"
 #run "echo 'cache_dir = %Q[tmp/sass-cache]' >> config/compass.rb"
-run "compass -r compass-colors -f fancy-buttons ."
+run "compass -r fancy-buttons -f fancy-buttons ."
 commit_state("Added compass to project with blueprint app/stylesheets, public/stylesheets. Using compressed form as well as relative assets in config")
 commit_state("Also added compass-colors and fancy-buttons")
 generate "formtastic"

@@ -1,10 +1,10 @@
 # misc
 alias reload='. $HOME/.profile'
-alias mongo_start = 'mongod run --config $HOME/.applications/homebrew/Cellar/mongodb/1.4.3-x86_64/mongod.conf'
-alias mysql_start = '$HOME/.applications/homebrew/Cellar/mysql/5.1.47/share/mysql/mysql.server start'
-alias mysql_stop = '$HOME/.applications/homebrew/Cellar/mysql/5.1.47/share/mysql/mysql.server stop'
-alias postgres_start ='pg_ctl -D $HOME/.applications/homebrew/var/postgres -l /Users/seivan/.applications/homebrew/var/postgres/server.log start' 
-alias postgres_stop ='pg_ctl -D $HOME/.applications/homebrew/var/postgres stop -s -m fast' 
+alias mongo_start='mongod run --config $HOME/.applications/homebrew/Cellar/mongodb/1.4.3-x86_64/mongod.conf'
+alias mysql_start='$HOME/.applications/homebrew/Cellar/mysql/5.1.47/share/mysql/mysql.server start'
+alias mysql_stop='$HOME/.applications/homebrew/Cellar/mysql/5.1.47/share/mysql/mysql.server stop'
+alias postgres_start='pg_ctl -D $HOME/.applications/homebrew/var/postgres -l /Users/seivan/.applications/homebrew/var/postgres/server.log start' 
+alias postgres_stop='pg_ctl -D $HOME/.applications/homebrew/var/postgres stop -s -m fast' 
 #Warez
 alias tMovies="scp $HOME/Downloads/*.torrent debby.zapto.org:~/Downloads/Movies/ && rm -rf $HOME/Downloads/*.torrent"
 alias tProgram="scp $HOME/Downloads/*.torrent debby.zapto.org:~/Downloads/Program/ && rm -rf $HOME/Downloads/*.torrent"

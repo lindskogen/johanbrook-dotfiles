@@ -1,7 +1,8 @@
 # misc
 alias reload='. $HOME/.profile'
-alias mongo_run='mongod run --config $HOME/.applications/homebrew/Cellar/mongodb/1.2.2-x86_64/mongod.conf'
-alias mysql_run='$HOME/.applications/homebrew/Cellar/mysql/5.1.43/share/mysql/mysql.server start'
+alias mongo_start='mongod run --config $HOME/.applications/homebrew/Cellar/mongodb/1.4.3-x86_64/mongod.conf'
+alias mysql_start='$HOME/.applications/homebrew/Cellar/mysql/5.1.47/share/mysql/mysql.server start'
+alias mysql_stop='$HOME/.applications/homebrew/Cellar/mysql/5.1.47/share/mysql/mysql.server stop'
 #Warez
 alias tMovies="scp $HOME/Downloads/*.torrent debby.zapto.org:~/Downloads/Movies/ && rm -rf $HOME/Downloads/*.torrent"
 alias tProgram="scp $HOME/Downloads/*.torrent debby.zapto.org:~/Downloads/Program/ && rm -rf $HOME/Downloads/*.torrent"

@@ -1,4 +1,10 @@
 export PATH="$HOME/.applications:$HOME/.applications/homebrew:$HOME/.applications/homebrew/bin:$HOME/.applications/homebrew/lib:$HOME/.applications/homebrew/include:/usr/local/bin:/usr/local/sbin:/usr/local:$PATH"
+export PATH="$HOME/.applications/virtualenvs/:$PATH"
 if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 export MANPATH="/usr/local/man:$HOME/.applications/homebrew/share/:$MANPATH"
-# export PYTHONPATH=/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/site-packages/
+
+export WORKON_HOME="$HOME/.applications/virtualenvs"
+source $HOME/.applications/homebrew/bin/virtualenvwrapper.sh
+export PYTHONPATH="$HOME/.applications/virtualenvs"
+export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python"
+

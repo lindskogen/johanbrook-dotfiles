@@ -1,2 +1,3 @@
 source $HOME/.bash/completion_scripts/git_completion
+source $HOME/.bash/completion_scripts/git_flow_completion
 complete -C $HOME/.bash/completion_scripts/rake_completion -o default rake

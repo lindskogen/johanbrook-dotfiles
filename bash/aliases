@@ -1,6 +1,6 @@
 # misc
 alias reload='. $HOME/.profile'
-alias mongo_start='mongod run --config $HOME/.applications/homebrew/Cellar/mongodb/1.6.0-x86_64/mongod.conf'
+alias mongo_start='mongod run --config $HOME/.applications/homebrew/Cellar/mongodb/*/mongod.conf'
 alias mysql_start='$HOME/.applications/homebrew/Cellar/mysql/5.1.47/share/mysql/mysql.server start'
 alias mysql_stop='$HOME/.applications/homebrew/Cellar/mysql/5.1.47/share/mysql/mysql.server stop'
 alias postgres_start='pg_ctl -D $HOME/.applications/homebrew/var/postgres -l /Users/seivan/.applications/homebrew/var/postgres/server.log start' 

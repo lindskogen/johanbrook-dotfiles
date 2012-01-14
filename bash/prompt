@@ -28,29 +28,27 @@ GIT_THEME_PROMPT_PREFIX=" $yellow[$RESET"
 GIT_THEME_PROMPT_SUFFIX="$yellow]$RESET"
 
 
-# Deprecated
+# Old
+
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
+
+
+# Git branch prompt
+# Still can't get the marks (✓ and ✗) to only show up in git repos only ...
 
 function __git_prompt {
 	GIT_PS1_SHOWDIRTYSTATE=1
 	
 	if [[ -n $(git status -s 2> /dev/null |grep -v ^# |grep -v "working directory clean") ]]; then
 		state=$GIT_THEME_PROMPT_DIRTY
-	else
-		if [[ -n $(git status -s 2> /dev/null | grep -v ^# | grep "Not a git repository") ]]; then
-			state=$GIT_THEME_PROMPT_CLEAN
-		else
-			state=""
-		fi
 	fi
 
-	branch=$(__git_ps1 "%s" | sed 's/ \([+*]\{1,\}\)$/\1/')
-#	__git_ps1 "[%s]" | sed 's/ \([+*]\{1,\}\)$/\1/'
-	echo "$branch$state"
+	__git_ps1 "[%s]" | sed 's/ \([+*]\{1,\}\)$/\1/'
 }
 
+# Old 
 
 function git_prompt_info {
   if [[ -n $(git status -s 2> /dev/null |grep -v ^# |grep -v "working directory clean") ]]; then
@@ -66,9 +64,8 @@ function git_prompt_info {
 }
 
 
-bash_prompt() {
-	
-	PS1="\$(date +%H:%M) $yellow\W$RESET \$(__git_prompt)$green $ $RESET"
+bash_prompt() {	
+	PS1="\$(date +%H:%M) $yellow\W$RESET \$(__git_prompt) $green $ $RESET"
 
 	#PS1="\$(date +%H:%M) \W $(git_prompt_info)$RESET $green\$ $RESET"
 

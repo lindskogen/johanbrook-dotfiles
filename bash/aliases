@@ -1,17 +1,15 @@
-# misc
-alias reload='. $HOME/.profile'
-alias mongo_start='mongod run --config $HOME/.applications/homebrew/Cellar/mongodb/*/mongod.conf'
-alias mysql_start='$HOME/.applications/homebrew/Cellar/mysql/5.1.47/share/mysql/mysql.server start'
-alias mysql_stop='$HOME/.applications/homebrew/Cellar/mysql/5.1.47/share/mysql/mysql.server stop'
-alias postgres_start='pg_ctl -D $HOME/.applications/homebrew/var/postgres -l /Users/seivan/.applications/homebrew/var/postgres/server.log start' 
-alias postgres_stop='pg_ctl -D $HOME/.applications/homebrew/var/postgres stop -s -m fast' 
-#Warez
-alias tMovies="scp $HOME/Downloads/*.torrent debby.zapto.org:~/Downloads/Incomplete/Movies/ && rm -rf $HOME/Downloads/*.torrent"
-alias tProgram="scp $HOME/Downloads/*.torrent debby.zapto.org:~/Downloads/Incomplete/Programs/ && rm -rf $HOME/Downloads/*.torrent"
-alias tRandom="scp $HOME/Downloads/*.torrent debby.zapto.org:~/Downloads/Incomplete/Randoms/ && rm -rf $HOME/Downloads/*.torrent"
+alias reload='. $HOME/.bash_profile && echo "Reloaded ~/.bash_profile"'
+alias vps="ssh root@johanbrook.com"
 
-#Django
-alias pym="python manage.py"
+# Portable ls with colors
+if ls --color -d . >/dev/null 2>&1; then
+  alias ls='ls --color=auto'  # Linux
+elif ls -G -d . >/dev/null 2>&1; then
+  alias ls='ls -G'  # BSD/OS X
+fi
 
-#ssh
-alias sc="ssh seivan@debby.zapto.org"
+#alias mongo_start='mongod run --config $HOME/.applications/homebrew/Cellar/mongodb/*/mongod.conf'
+#alias mysql_start='$HOME/.applications/homebrew/Cellar/mysql/5.1.47/share/mysql/mysql.server start'
+#alias mysql_stop='$HOME/.applications/homebrew/Cellar/mysql/5.1.47/share/mysql/mysql.server stop'
+#alias postgres_start='pg_ctl -D $HOME/.applications/homebrew/var/postgres -l /Users/seivan/.applications/homebrew/var/postgres/server.log start' 
+#alias postgres_stop='pg_ctl -D $HOME/.applications/homebrew/var/postgres stop -s -m fast'

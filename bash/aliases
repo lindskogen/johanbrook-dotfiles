@@ -1,12 +1,7 @@
 alias reload='. $HOME/.bash_profile && echo "Reloaded ~/.bash_profile"'
 alias vps="ssh root@johanbrook.com"
 
-# Portable ls with colors
-if ls --color -d . >/dev/null 2>&1; then
-  alias ls='ls --color=auto'  # Linux
-elif ls -G -d . >/dev/null 2>&1; then
-  alias ls='ls -G'  # BSD/OS X
-fi
+
 
 #alias mongo_start='mongod run --config $HOME/.applications/homebrew/Cellar/mongodb/*/mongod.conf'
 #alias mysql_start='$HOME/.applications/homebrew/Cellar/mysql/5.1.47/share/mysql/mysql.server start'

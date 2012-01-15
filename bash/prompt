@@ -43,9 +43,11 @@ function __git_prompt {
 	
 	if [[ -n $(git status -s 2> /dev/null |grep -v ^# |grep -v "working directory clean") ]]; then
 		state=$GIT_THEME_PROMPT_DIRTY
+	else
+		state=$GIT_THEME_PROMPT_CLEAN
 	fi
 
-	__git_ps1 "[%s]" | sed 's/ \([+*]\{1,\}\)$/\1/'
+	__git_ps1 " [%s]$state" | sed 's/ \([+*]\{1,\}\)$/\1/'
 }
 
 # Old 
@@ -65,7 +67,7 @@ function git_prompt_info {
 
 
 bash_prompt() {	
-	PS1=" $yellow\W$RESET \$(__git_prompt) $green $ $RESET"
+	PS1="$yellow\W:$RESET\$(__git_prompt)$green $ $RESET"
 
 	#PS1="\$(date +%H:%M) \W $(git_prompt_info)$RESET $green\$ $RESET"
 

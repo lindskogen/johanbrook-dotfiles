@@ -1,7 +1,12 @@
 alias reload='. $HOME/.bash_profile && echo "Reloaded ~/.bash_profile"'
 alias vps="ssh root@johanbrook.com"
 
+alias jvb="cd ~/sites/johanbrook_wp3/wp-content/themes"
 
+# Projects
+
+alias fh="cd ~/Sites/fagerhult/wp-content/themes/fagerhult"
+alias fhs="fh && compass watch"
 
 #alias mongo_start='mongod run --config $HOME/.applications/homebrew/Cellar/mongodb/*/mongod.conf'
 #alias mysql_start='$HOME/.applications/homebrew/Cellar/mysql/5.1.47/share/mysql/mysql.server start'

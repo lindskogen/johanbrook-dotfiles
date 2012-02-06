@@ -9,4 +9,5 @@ Bright, semitransparent Terminal colour scheme. Current git branch name, and a c
 ### Thanks
 
 - [Seivan](http://github.com/seivan/dotfiles)
-- [Henrik](https://github.com/henrik/dotfiles/)
+- [Henrik](http://github.com/henrik/dotfiles/)
+- [Holman](http://github.com/holman/dotfiles)

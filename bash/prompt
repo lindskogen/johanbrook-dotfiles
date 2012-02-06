@@ -1,12 +1,13 @@
 # regular colors
 black="\[\033[0;30m\]"    # black
+gray="\[\033[0;34m\]"		# gray
 red="\[\033[0;31m\]"    # red
 green="\[\033[0;32m\]"    # green
 yellow="\[\033[0;33m\]"    # yellow
 blue="\[\033[0;34m\]"    # blue
 magenta="\[\033[0;35m\]"    # magenta
 cyan="\[\033[0;36m\]"    # cyan
-white="\[\033[0;37m\]"    # white
+white="\[\033[1;37m\]"    # white
 orange="\[\e[33;40m\]"	# orange
 
  # emphasized (bolded) colors
@@ -67,7 +68,7 @@ function git_prompt_info {
 
 
 bash_prompt() {	
-	PS1="$red\W:$RESET\$(__git_prompt)$black $ $RESET"
+	PS1="$red\W:$gray\$(__git_prompt)$black $ $RESET"
 
 	#PS1="\$(date +%H:%M) \W $(git_prompt_info)$RESET $green\$ $RESET"
 

@@ -48,7 +48,7 @@ function __git_prompt {
 		state=$GIT_THEME_PROMPT_CLEAN
 	fi
 
-	__git_ps1 " [%s]$state" | sed 's/ \([+*]\{1,\}\)$/\1/'
+	__git_ps1 " (%s$state )" | sed 's/ \([+*]\{1,\}\)$/\1/'
 }
 
 # Old 
@@ -68,7 +68,7 @@ function git_prompt_info {
 
 
 bash_prompt() {	
-	PS1="$red\W:$gray\$(__git_prompt)$black $ $RESET"
+	PS1="$red\W$gray\$(__git_prompt)$black › $RESET"
 
 	#PS1="\$(date +%H:%M) \W $(git_prompt_info)$RESET $green\$ $RESET"
 

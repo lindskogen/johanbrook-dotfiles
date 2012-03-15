@@ -1,0 +1,53 @@
+[user]
+	name = Johan Brook
+	email = johan.jvb@gmail.com
+[alias]
+	co = checkout
+	ci = commit
+	cia = commit -a -m
+	pu = push origin master
+	log = log --topo-order --decorate
+	st = status
+	pul = pull --rebase
+	unstage = reset HEAD
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = cyan bold
+	branch = green bold
+
+[color "branch"]
+	current = green bold
+	local = yellow
+	remote = yellow	
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red reverse
+  new = green reverse
+  whitespace = white reverse
+
+[core]
+	excludesfile = $HOME/.gitignore
+	editor = mate -w
+[format]
+	pretty = %C(yellow)%h%Creset %an\t%s
+	
+[github]
+	user = johanbrook
+	token = x
+
+[difftool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
+	
+[difftool "Kaleidoscope"]
+	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"

@@ -5,9 +5,11 @@
 	co = checkout
 	ci = commit
 	cia = commit -a -m
-	pu = push origin master
+	b = branch
+	p = push
+	pom = push origin master
 	log = log --topo-order --decorate
-	st = status
+	s = status
 	pul = pull --rebase
 	unstage = reset HEAD
 
@@ -42,7 +44,6 @@
 	
 [github]
 	user = johanbrook
-	token = x
 
 [difftool]
 	prompt = false

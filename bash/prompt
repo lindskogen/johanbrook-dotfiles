@@ -68,7 +68,7 @@ function git_prompt_info {
 
 
 bash_prompt() {	
-	PS1="$red\W$gray\$(__git_prompt)$black → $RESET"
+	PS1="$red\W$magenta\$(__git_prompt)$black → $RESET"
 
 	#PS1="\$(date +%H:%M) \W $(git_prompt_info)$RESET $green\$ $RESET"
 

@@ -1,5 +1,6 @@
 alias reload='. $HOME/.bash_profile && echo "Reloaded ~/.bash_profile"'
 alias vps="ssh root@johanbrook.com"
+alias irc="ssh johanbr@hubben.chalmers.it"
 
 # Web
 

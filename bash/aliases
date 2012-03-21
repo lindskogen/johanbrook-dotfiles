@@ -7,6 +7,10 @@ alias irc="ssh johanbr@hubben.chalmers.it"
 
 alias jvb="cd ~/sites/johanbrook_wp3/wp-content/themes"
 
+function json() {
+	curl "$@" | python -mjson.tool
+}
+
 # Projects
 
 alias fh="cd ~/Sites/fagerhult/wp-content/themes/fagerhult"

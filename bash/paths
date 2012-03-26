@@ -1,6 +1,9 @@
 #export PATH="/usr/local/Cellar/git/1.7.8.3/bin/git:$PATH"
 
-export PATH="$HOME/.dotfiles/bin:$PATH"
+export JUNIT_HOME="/usr/share/java"
+export PATH="$HOME/.dotfiles/bin:$JUNIT_HOME:$PATH"
+export CLASSPATH="$JUNIT_HOME/junit.jar:$JUNIT_HOME:$HOME/code/java/tda367/medioqre/bin"
+#java -cp /usr/share/java/junit.jar org.junit.runner.JUnitCore
 
 # rbenv init
 eval "$(rbenv init -)"

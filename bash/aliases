@@ -1,7 +1,7 @@
 alias reload='. $HOME/.bash_profile && echo "Reloaded ~/.bash_profile"'
 alias vps="ssh root@johanbrook.com"
 alias cd..="cd .."
-alias irc="ssh johanbr@hubben.chalmers.it"
+alias irc="ssh johanbr@hugin.chalmers.it"
 
 # Web
 
@@ -14,7 +14,7 @@ function json() {
 # Projects
 
 alias fh="cd ~/Sites/fagerhult/wp-content/themes/fagerhult"
-alias fhs="fh && compass watch"
+alias frank="cd ~/Code/java/tda367/medioqre"
 
 # Dev
 

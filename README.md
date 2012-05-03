@@ -2,12 +2,13 @@
 	cd $HOME/.dotfiles
 	rake install
 
-![Terminal Bright](http://f.cl.ly/items/1l0t3G0o2X0I262G2N0h/Sk%C3%A4rmavbild%202012-03-12%20kl.%2022.52.26.png "Terminal Bright")
+![Terminal Bright](http://cl.ly/GKDA/prompt.png "Terminal Bright")
 
 Bright, semitransparent Terminal colour scheme. Current git branch name, and a checkmark/cross depending on if the project dir has uncommited files.
 
 ### Thanks
 
-- [Seivan](http://github.com/seivan/dotfiles)
-- [Henrik](http://github.com/henrik/dotfiles/)
-- [Holman](http://github.com/holman/dotfiles)
+- [Seivan](https://github.com/seivan/dotfiles)
+- [Henrik](https://github.com/henrik/dotfiles/)
+- [Holman](https://github.com/holman/dotfiles)
+- [Barber](https://github.com/JBarberU/dotfiles)

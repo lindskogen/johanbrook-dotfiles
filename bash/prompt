@@ -49,10 +49,10 @@ GIT_THEME_PROMPT_SUFFIX="$yellow]$RESET"
 function __git_prompt {
 	if git branch > /dev/null 2>&1 ; then
 		message="";
-		if [[ -n $(git status | grep -v "working directory clean") ]]; then
-			message="$red$GIT_ICON_DIRTY"
-		else
+		if [[ $(git status | grep "working directory clean") ]]; then
 			message="$green$GIT_ICON_OK"
+		else
+			message="$red$GIT_ICON_DIRTY"
 		fi
 		echo -ne " $magenta($(parse_git_branch) $message$magenta)"
 	else

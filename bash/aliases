@@ -25,7 +25,3 @@ alias mongo_start='mongod run --config /usr/local/Cellar/mongodb/2.0.2-x86_64/mo
 #alias mysql_stop='$HOME/.applications/homebrew/Cellar/mysql/5.1.47/share/mysql/mysql.server stop'
 #alias postgres_start='pg_ctl -D $HOME/.applications/homebrew/var/postgres -l /Users/seivan/.applications/homebrew/var/postgres/server.log start' 
 #alias postgres_stop='pg_ctl -D $HOME/.applications/homebrew/var/postgres stop -s -m fast'
-
-# Other
-
-alias irc="ssh johanbr@hubben.chalmers.it"

@@ -1,4 +1,6 @@
+# Reload the bash_profile
 alias reload='. $HOME/.bash_profile && echo "Reloaded ~/.bash_profile"'
+
 alias vps="ssh root@johanbrook.com"
 alias cd..="cd .."
 alias irc="ssh johanbr@hugin.chalmers.it"
@@ -7,21 +9,26 @@ alias irc="ssh johanbr@hugin.chalmers.it"
 
 alias jvb="cd ~/sites/johanbrook_wp3/wp-content/themes"
 
+# Pretty print JSON
+
 function json() {
 	curl "$@" | python -mjson.tool
 }
 
 # Projects
-
-alias fh="cd ~/Sites/fagerhult/wp-content/themes/fagerhult"
-alias frank="cd ~/Code/java/tda367/medioqre"
+alias ad="cd ~/code/projects/xdin/adaglance"
 
 # Dev
 
-alias pyserver='python -m SimpleHTTPServer'	# Serves a simple HTTP server on localhost:80000
-alias junit='java org.junit.runner.JUnitCore'
+# Serves a simple HTTP server on localhost:8000. Run from any directory.
+alias pyserver='python -m SimpleHTTPServer'
+
+# Start MongoDB server
 alias mongo_start='mongod run --config /usr/local/Cellar/mongodb/2.0.2-x86_64/mongod.conf'
+
 #alias mysql_start='$HOME/.applications/homebrew/Cellar/mysql/5.1.47/share/mysql/mysql.server start'
 #alias mysql_stop='$HOME/.applications/homebrew/Cellar/mysql/5.1.47/share/mysql/mysql.server stop'
+
+# Start and stop PostgreSQL server
 alias pg_start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start' 
 alias pg_stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'

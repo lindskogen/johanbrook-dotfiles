@@ -65,7 +65,7 @@ function parse_git_branch {
 }
 
 bash_prompt() {	
-	PS1="$red\W$(__git_prompt)$black → $RESET"
+	PS1="$red\w$(__git_prompt)$black → $RESET"
 }
 
 PROMPT_COMMAND="bash_prompt"
